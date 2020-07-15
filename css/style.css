@@ -1,0 +1,67 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: normal 16px Arial, sans-serif;
+}
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1vw;
+  padding: 1vw;
+
+}
+
+.container__lesson {
+  display: grid;
+  background: #3D9C8F;
+}
+
+.container--link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #28d0b9;
+  color: #ffaf31;
+	font-size: 2em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	box-sizing: border-box;
+}
+
+.container--link:hover,
+.lesson-link:hover {
+	color: #ffff50;
+}
+
+.container--link:active,
+.lesson-link:active {
+	color: #FF3631;
+}
+
+.lesson-title {
+  margin: 10vh 0 0 0;
+  text-align: center;
+}
+
+.lesson-link {
+  text-decoration: none;
+  font-size: 2em;
+  color: #FFC865;
+}
+
+@media only screen and (max-width: 480px) {
+  .container--link {
+    font-size: 1.5em;
+  }
+}
