@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Lesson 1</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/lesson_2.css">
+    <link rel="stylesheet" href="../css/media.css">
+  </head>
+  <body>
+    <div class="container container__lesson">
+      <h1 class="lesson-title">
+        <a class="lesson-link" href="lesson_2.html">Second lesson</a>
+      </h1>
+      <div class="exercise">
+        <h2 class="exercise--title">Exercise №1</h2>
+        <div class="exercise--wrp">
+          <p class="exercise--line">
+            <code>
+              <span>var a = 1, b = 1, c, d;</span>
+              <span></span>
+            </code>
+          </p>
+          <p class="exercise--line">
+            <code>
+              <span>c = ++a; alert(c);</span>
+              <span>// 2 (префиксная форма сразу возвращает значение a = 2)</span>
+            </code>
+          </p>
+          <p class="exercise--line">
+            <code>
+              <span>d = b++; alert(d);</span>
+              <span>// 1 (постфиксная форма возвращает старое значение b = 1)</span>
+            </code>
+          </p>
+          <p class="exercise--line">
+            <code>
+              <span>c = (2+ ++a); alert(c);</span>
+              <span>// 5 (префиксная форма сразу возвращает значение a = 3)</span>
+            </code>
+          </p>
+          <p class="exercise--line">
+            <code>
+              <span>d = (2+ b++); alert(d);</span>
+              <span>// 4 (постфиксная форма возвращает старое значение b = 2)</span>
+            </code>
+          </p>
+          <p class="exercise--line">
+            <code>
+              <span>alert(a);</span>
+              <span>// 3 (a дважды увеличило значение на единицу)</span>
+            </code>
+          </p>
+          <p class="exercise--line">
+            <code>
+              <span>alert(b);</span>
+              <span>// 3 (b дважды увеличило значение на единицу)</span>
+            </code>
+          </p>
+        </div>
+      </div>
+      <hr class="exercise-divider">
+      <div class="exercise">
+        <h2 class="exercise--title">Exercise №2</h2>
+        <div class="exercise--wrp">
+          <p class="exercise--line"><code><span>var a = 2;</span></code></p>
+          <p class="exercise--line"><code><span>var x = 1 + (a *= 2);</span></code></p>
+          <p class="exercise--line"><code><span>x = 5;</span></code></p>
+        </div>
+      </div>
+      <hr class="exercise-divider">
+      <div class="exercise">
+        <h2 class="exercise--title">Exercise №7</h2>
+        <p class="exercise--line"><code><span>0 == null</span><span>// false, так как в данном случае null ни к чему не приводится</span></code></p>
+        <p class="exercise--line"><code><span>0 === null</span><span>// false, так как сравниваются разные типы данных</span></code></p>
+
+      </div>
+      <hr class="exercise-divider">
+    </div>
+    <script src="../js/lesson_2.js"></script>
+  </body>
+</html>
