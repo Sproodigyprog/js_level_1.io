@@ -1,0 +1,9 @@
+@media only screen and (max-width: 992px) {
+  .container {
+    font-size: .8em;
+  }
+
+  .exercise--line code {
+  	padding: 0 0 0 13%;;
+  }
+}

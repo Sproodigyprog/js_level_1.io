@@ -18,11 +18,10 @@ body {
   grid-template-columns: auto auto;
   grid-gap: 1vw;
   padding: 1vw;
-
 }
 
 .container__lesson {
-  display: grid;
+  padding: 8vh 0 0 0;
   background: #3D9C8F;
 }
 
@@ -31,7 +30,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background: #28d0b9;
-  color: #ffaf31;
+  color: #fb3044;
 	font-size: 2em;
 	text-align: center;
 	text-decoration: none;
@@ -39,29 +38,27 @@ body {
 	box-sizing: border-box;
 }
 
+.container--link[href="#"] {
+	background: #81e8d9;
+  cursor: not-allowed;
+}
+
 .container--link:hover,
 .lesson-link:hover {
-	color: #ffff50;
+	color: #a3101e;
 }
 
 .container--link:active,
 .lesson-link:active {
-	color: #FF3631;
+	color: #a67010;
 }
 
 .lesson-title {
-  margin: 10vh 0 0 0;
   text-align: center;
 }
 
 .lesson-link {
   text-decoration: none;
   font-size: 2em;
-  color: #FFC865;
-}
-
-@media only screen and (max-width: 480px) {
-  .container--link {
-    font-size: 1.5em;
-  }
+  color: #000;
 }
