@@ -1,0 +1,22 @@
+.header-h2 {
+	text-align: center;
+	font-size: 2em;
+	margin: 0;
+}
+
+.card,
+.basket {
+	width: 40%;
+	box-sizing: border-box;
+	margin: 0 auto 1rem;
+	text-align: center;
+	font-size: 1.5em;
+	padding: .5em;
+	border: 1px solid #a3101e;
+}
+
+.card p,
+.basket p {
+	margin: 0;
+	line-height: 1.55;
+}

@@ -1,9 +1,17 @@
 @media only screen and (max-width: 992px) {
   .container {
     font-size: .8em;
+    width: 100%;
   }
 
   .exercise--line code {
-  	padding: 0 0 0 13%;;
+  	padding: 0 0 0 13%;
+  }
+}
+
+@media only screen and (max-width: 564px) {
+  .card,
+  .basket {
+    width: 90%;
   }
 }
