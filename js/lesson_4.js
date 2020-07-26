@@ -122,8 +122,6 @@ console.log(`Sum of basket: ${countBasketPrice()}`)
 
 // Exercise 3
 
-console.log('Exercise 3')
-
 class Product {
   constructor (name, brand, color, price) {
     this._name = name
@@ -150,33 +148,38 @@ class Product {
 }
 
 class Card extends Product {
-  constructor(name, brand, color, price) {
-    super(name, brand, color, price)
+  constructor(good) {
+    super()
+    this._good = good
   }
 
   showProductData() {
-    document.getElementsByClassName('card--name')[0].innerHTML = `Name: ${this._name}`
-    document.getElementsByClassName('card--brand')[0].innerHTML = `Brand: ${this._brand}`
-    document.getElementsByClassName('card--color')[0].innerHTML = `Color: ${this._color}`
-    document.getElementsByClassName('card--price')[0].innerHTML = `Price: ${this._price}`
+    document.getElementsByClassName('card--name')[0].innerHTML = `Name: ${this._good._name}`
+    document.getElementsByClassName('card--brand')[0].innerHTML = `Brand: ${this._good._brand}`
+    document.getElementsByClassName('card--color')[0].innerHTML = `Color: ${this._good._color}`
+    document.getElementsByClassName('card--price')[0].innerHTML = `Price: ${this._good._price}`
   }
 }
 
 class Basket extends Product {
-  constructor(name, brand, color, price) {
-    super(name, brand, color, price)
+  constructor(goods) {
+    super()
+    this._goods = goods
   }
 
   showBasketData() {
-    document.getElementsByClassName('basket--brand')[0].innerHTML = `<b>${this._brand}</b>`
-    document.getElementsByClassName('basket--name')[0].innerHTML = `Name: ${this._name}`
-    document.getElementsByClassName('basket--price')[0].innerHTML = `Price: ${this._price}`
+    this._goods.forEach(function(good, ind, arr) {
+      document.getElementsByClassName(`basket--brand-${ind}`)[0].innerHTML = `<b>${arr[ind]._brand}</b>`
+      document.getElementsByClassName(`basket--name-${ind}`)[0].innerHTML = `Name: ${arr[ind]._name}`
+      document.getElementsByClassName(`basket--price-${ind}`)[0].innerHTML = `Price: ${arr[ind]._price}`
+    })
   }
 }
 
 const jacket = new Product('Jacket', 'Nike', 'Lightgreen', '3999')
-const shoes = new Card('Sneakers', 'Adidas', 'Lightblue', '4999')
-const basket = new Basket('Sneakers', 'Nike', 'White', '6999')
+const gloves = new Product('Gloves', 'Columbia', 'Black', '1999')
+const card = new Card(jacket)
+const basket = new Basket([jacket, gloves])
 
-shoes.showProductData()
+card.showProductData()
 basket.showBasketData()
