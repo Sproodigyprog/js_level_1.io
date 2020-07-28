@@ -62,3 +62,8 @@ body {
   font-size: 2em;
   color: #000;
 }
+
+.exercise--title {
+  font-size: 2em;
+  text-align: center;
+}

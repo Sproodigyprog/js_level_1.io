@@ -1,0 +1,44 @@
+.board {
+	width: 600px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.lesson-title__local {
+	margin: 0 0 10px 86px;
+}
+
+.exercise--title__local {
+	margin: 0 0 10px 86px;
+}
+
+.row {
+	display: flex;
+}
+
+.row__last {
+	margin: 2px 0 0 100px;
+}
+
+.numbers {
+	padding: 0px 5px 0 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.letters {
+ display: flex;
+}
+
+.white {
+	background: #fff;
+	box-sizing: border-box;
+}
+
+.black {
+	background: #000;
+	box-sizing: border-box;
+}

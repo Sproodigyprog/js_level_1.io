@@ -4,10 +4,6 @@
 	align-items: center;
 }
 
-.exercise--title {
-  font-size: 2em;
-}
-
 .exercise--wrp {
   width: 100%;
 	display: flex;
