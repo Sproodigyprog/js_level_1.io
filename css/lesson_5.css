@@ -42,3 +42,22 @@
 	background: #000;
 	box-sizing: border-box;
 }
+
+.catalog {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.product-card {
+	width: 22vw;
+	border: 3px solid #a3101e;
+	border-radius: 8px;
+	margin: 1vh 1vw;
+	padding: 1vh 1vw;
+	box-sizing: border-box;
+}
+
+.product-card--name {
+
+}
