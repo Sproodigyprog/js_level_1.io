@@ -6,14 +6,6 @@
 	flex-wrap: wrap;
 }
 
-.lesson-title__local {
-	margin: 0 0 10px 86px;
-}
-
-.exercise--title__local {
-	margin: 0 0 10px 86px;
-}
-
 .row {
 	display: flex;
 }
@@ -36,28 +28,36 @@
 .white {
 	background: #fff;
 	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .black {
 	background: #000;
 	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .catalog {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .product-card {
-	width: 22vw;
+	width: 23%;
 	border: 3px solid #a3101e;
 	border-radius: 8px;
-	margin: 1vh 1vw;
-	padding: 1vh 1vw;
+	margin: 1% 1%;
+	padding: 1% 1%;
 	box-sizing: border-box;
+	background: #a67010;
 }
 
-.product-card--name {
-
+.cart-data {
+	text-align: center;
+	font-size: 1.5em;
 }

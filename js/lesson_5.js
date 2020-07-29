@@ -21,7 +21,39 @@ function createBoard() {
       const square = letters = document.createElement('div')
       square.style.width = square.style.height = (boardWidth / 9) + 'px'
 
-      if (k % 2 === 0 && k !== 9) {
+      if (k !== 9) {
+        square.style.fontSize = '2em'
+        square.style.color = 'blue'
+      }
+
+      if ((k === 1) || (k === 8)) {
+        switch (i) {
+          case 1:
+          case 8:
+            square.innerText = 'R'
+            break
+          case 2:
+          case 7:
+            square.innerText = 'H'
+            break
+          case 3:
+          case 6:
+            square.innerText = 'B'
+            break
+          case 4:
+            square.innerText = 'Q'
+            break
+          case 5:
+            square.innerText = 'K'
+            break
+        }
+      }
+
+      if ((k === 2) || (k === 7)) {
+        square.innerText = 'P'
+      }
+
+      if ((k % 2 === 0) && (k !== 9)) {
         if (i % 2 === 0) square.classList.add('white')
         else square.classList.add('black')
       } else if (k !== 9){
@@ -51,6 +83,22 @@ class Product {
     this._color = color
     this._price = price
   }
+
+  get name() {
+    return this._name
+  }
+
+  get brand() {
+    return this._brand
+  }
+
+  get color() {
+    return this._color
+  }
+
+  get price() {
+    return this._price
+  }
 }
 
 class productCard extends Product {
@@ -74,11 +122,6 @@ class productCard extends Product {
     targetColor.innerHTML = `<b>Color:</b> ${this._product._color}`
     targetPrice.innerHTML = `<b>Price:</b> ${this._product._price}`
 
-    targetName.classList.add('.product-card--name')
-    targetBrand.classList.add('.product-card--brand')
-    targetColor.classList.add('.product-card--color')
-    targetPrice.classList.add('.product-card--price')
-
     target.appendChild(targetName)
     target.appendChild(targetBrand)
     target.appendChild(targetColor)
@@ -96,7 +139,8 @@ class Catalog {
   }
 
   fillCatalog() {
-    while(this._catalog.length <= this._goodsCount) {
+    console.log(this._goodsCount)
+    while(this._catalog.length < this._goodsCount) {
       this._catalog.push(this._cards[Math.floor(Math.random() * 4)])
     }
     return this._catalog
@@ -106,20 +150,30 @@ class Catalog {
     this._catalog.forEach(card => card.render())
   }
 
-  get catalog() {
+  get getCatalog() {
     return this._catalog
   }
-
 }
 
 class Cart extends Catalog {
+  goodsCount = 0
+  totalPrice = 0
+
   constructor(goods) {
     super()
     this._goods = goods
   }
 
   calc() {
+    const target = document.querySelector('.cart-data')
     console.log(this._goods)
+    if (this._goods.length) {
+      for (const good of this._goods) {
+        this.goodsCount++
+        this.totalPrice += parseInt(good._product._price)
+      }
+      target.innerHTML = `In cart: goods count — ${this.goodsCount}; total price — ${this.totalPrice}`
+    } else target.innerHTML = `The cart is empty!`
   }
 }
 
@@ -135,9 +189,8 @@ const tShirtCard = new productCard(tShirt)
 
 const allCards = [socksCard, glovesCard, sneakersCard, tShirtCard]
 const catalog = new Catalog(allCards)
-
-const goods = catalog.fillCatalog()
+catalog.fillCatalog()
 catalog.show()
 
-const cart = new Cart(goods)
+const cart = new Cart(catalog.getCatalog)
 cart.calc()
