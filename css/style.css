@@ -1,5 +1,4 @@
 body, html {
-  width: 100%;
   min-height: 100%;
 }
 
@@ -22,7 +21,7 @@ body {
 }
 
 .container__lesson {
-  padding: 8vh 0 0 0;
+  padding: 4vh;
   background: #3D9C8F;
 }
 
