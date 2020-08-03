@@ -1,5 +1,6 @@
 body, html {
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -61,4 +62,9 @@ body {
   text-decoration: none;
   font-size: 2em;
   color: #000;
+}
+
+.exercise--title {
+  font-size: 2em;
+  text-align: center;
 }
