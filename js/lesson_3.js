@@ -30,7 +30,7 @@ function countBasketPrice() {
   return basket.reduce((initial, value) => (initial + value), 0)
 }
 
-console.log(`Sum of basket: ${countBasketPrice([3, 4, 8])}`)
+console.log(`Sum of basket: ${countBasketPrice()}`)
 
 // Exercise 4
 
