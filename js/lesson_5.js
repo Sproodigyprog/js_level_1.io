@@ -2,68 +2,68 @@
 
 function createBoard() {
   const board = document.querySelector('.board')
-  const boardWidth = board.clientWidth
+  const cellWidth = '4vw'
+  const boardWidth = parseInt(cellWidth) * 10 + 'vw'
 
-  for (let k = 1; k <= 9; k++) {
+  board.style.width = boardWidth
+
+  for (let rowCount = 1; rowCount <= 9; rowCount++) {
     const row = document.createElement('div')
     const numbers = document.createElement('div')
-    numbers.style.width = numbers.style.height = (boardWidth / 9) + 'px'
-
-    if (k !== 9) {
-      numbers.innerText = 9 - k
-      numbers.classList.add('numbers')
-      row.appendChild(numbers)
-    }
 
     row.classList.add('row')
 
-    for (let i = 1; i < 9; i++) {
-      const square = letters = document.createElement('div')
-      square.style.width = square.style.height = (boardWidth / 9) + 'px'
+    for (let cell = 1; cell <= 9; cell++) {
+      const square = document.createElement('div')
+      square.classList.add('square')
+      square.style.width = square.style.height = cellWidth
 
-      if (k !== 9) {
-        square.style.fontSize = '2em'
-        square.style.color = 'blue'
+      if ((rowCount !== 9) && (cell == 1)) {
+        square.innerText = 9 - rowCount
+        square.classList.add('numbers')
       }
 
-      if ((k === 1) || (k === 8)) {
-        switch (i) {
-          case 1:
-          case 8:
+      if (rowCount === 9) {
+        square.classList.add('letters')
+      }
+
+      if ((rowCount === 1) || (rowCount === 8)) {
+        switch (cell) {
+          case 2:
+          case 9:
             square.innerText = 'R'
             break
-          case 2:
-          case 7:
+          case 3:
+          case 8:
             square.innerText = 'H'
             break
-          case 3:
-          case 6:
+          case 4:
+          case 7:
             square.innerText = 'B'
             break
-          case 4:
+          case 5:
             square.innerText = 'Q'
             break
-          case 5:
+          case 6:
             square.innerText = 'K'
             break
         }
       }
 
-      if ((k === 2) || (k === 7)) {
+      if (((rowCount === 2) || (rowCount === 7)) && (cell > 1)) {
         square.innerText = 'P'
       }
 
-      if ((k % 2 === 0) && (k !== 9)) {
-        if (i % 2 === 0) square.classList.add('white')
-        else square.classList.add('black')
-      } else if (k !== 9){
-        if (i % 2 === 0) square.classList.add('black')
-        else square.classList.add('white')
+      if ((rowCount % 2 === 0) && (rowCount !== 9) && (cell > 1)) {
+        (cell % 2 === 0) ? square.classList.add('black') : square.classList.add('white')
+      } else if ((rowCount !== 9) && (cell > 1)){
+        (cell % 2 === 0) ? square.classList.add('white') : square.classList.add('black')
       }
 
-      if (k === 9) {
-        square.innerText = String.fromCharCode(96 + i)
-        row.classList.add('row__last')
+      if (rowCount === 9 && cell > 1) {
+        square.innerText = String.fromCharCode(95 + cell)
+        square.classList.add('letters')
+        row.classList.add('row')
         row.appendChild(square)
       }
       row.appendChild(square)

@@ -1,5 +1,4 @@
 .board {
-	width: 600px;
 	margin: 0 auto;
 	box-sizing: border-box;
 	display: flex;
@@ -8,21 +7,27 @@
 
 .row {
 	display: flex;
-}
-
-.row__last {
-	margin: 2px 0 0 100px;
+	font-size: 1.5em;
+	color: #1972c4;
 }
 
 .numbers {
-	padding: 0px 5px 0 0;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	padding: 0 5px 0 0;
+	font-size: .7em;
+	color: initial;
+	box-sizing: border-box;
 }
 
 .letters {
- display: flex;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: .7em;
+	padding: 2px 0 0 0;
+	color: initial;
 }
 
 .white {

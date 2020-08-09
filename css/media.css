@@ -30,4 +30,8 @@
   .modal--img {
     height: 50%;
   }
+
+  .row {
+    font-size: 1em;
+  }
 }
