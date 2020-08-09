@@ -21,10 +21,10 @@
 
   .card--img {
   	width: auto;
-  	height: 56%;
+  	height: 48%;
   	position: absolute;
   	right: 1em;
-  	top: .5em;
+  	top: 1em;
   }
 
   .modal--img {

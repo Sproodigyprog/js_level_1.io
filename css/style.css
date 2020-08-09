@@ -7,6 +7,10 @@ body {
   font: normal 16px Arial, sans-serif;
 }
 
+p {
+  margin: 0; 
+}
+
 .container {
 	width: 100%;
 	min-height: 100vh;
@@ -21,7 +25,7 @@ body {
 }
 
 .container__lesson {
-  padding: 4vh;
+  padding: 4vh 0;
   background: #3D9C8F;
 }
 
