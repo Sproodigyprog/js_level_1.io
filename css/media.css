@@ -14,4 +14,20 @@
   .basket {
     width: 90%;
   }
+
+  .cart_rendered {
+    width: 90%;
+  }
+
+  .card--img {
+  	width: auto;
+  	height: 56%;
+  	position: absolute;
+  	right: 1em;
+  	top: .5em;
+  }
+
+  .modal--img {
+    height: 50%;
+  }
 }
