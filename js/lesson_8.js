@@ -72,32 +72,9 @@ class Card {
     img.classList.add('card--img')
     img.addEventListener('click', this._showModalSlider.bind(this))
 
-    switch (productName) {
-      case 'gloves':
-        img.src = '../img/gloves/gloves_1.png'
-        img.alt = 'gloves'
-        break
-      case 'sneakers':
-        img.src = '../img/sneakers/sneakers_1.png'
-        img.alt = 'sneakers'
-        break
-      case 't-shirt':
-        img.src = '../img/tshirts/t-shirt_1.png'
-        img.alt = 't-shirt'
-        break
-      case 'socks':
-        img.src = '../img/socks/socks_1.png'
-        img.alt = 'socks'
-        break
-      case 'jacket':
-        img.src = '../img/jackets/jacket_1.png'
-        img.alt = 'jacket'
-        break
-      case 'shorts':
-        img.src = '../img/shorts/shorts_1.png'
-        img.alt = 'shorts'
-        break
-    }
+    img.src = `../img/${productName}/${productName}_1.png`
+    img.alt = `${productName}`
+
     return img
   }
 
@@ -367,6 +344,12 @@ class Cart {
     btn.href = '#'
     btn.innerHTML = '\u21E9'
     btn.addEventListener('click', this._collapseCart)
+    btn.addEventListener('click', () => {
+      setTimeout( () => {
+        document.body.parentElement.style.scrollBehavior = 'smooth'
+        document.body.parentElement.scrollTop = document.body.parentElement.offsetHeight
+      }, 1000)
+    })
 
     return btn
   }
