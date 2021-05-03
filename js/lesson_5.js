@@ -2,32 +2,30 @@
 
 function createBoard() {
   const board = document.querySelector('.board')
-  const cellWidth = '4vw'
-  const boardWidth = parseInt(cellWidth) * 10 + 'vw'
+  const cellWidth = '5vw'
 
-  board.style.width = boardWidth
-
-  for (let rowCount = 1; rowCount <= 9; rowCount++) {
+  for (let rowCount = 1; rowCount <= 10; rowCount++) {
     const row = document.createElement('div')
     const numbers = document.createElement('div')
 
     row.classList.add('row')
 
-    for (let cell = 1; cell <= 9; cell++) {
+    for (let cell = 1; cell <= 10; cell++) {
       const square = document.createElement('div')
-      square.classList.add('square')
       square.style.width = square.style.height = cellWidth
 
-      if ((rowCount !== 9) && (cell == 1)) {
-        square.innerText = 9 - rowCount
+      if ((rowCount > 1 && rowCount < 10) && (cell > 1 && cell < 10)) {
+        square.classList.add('square')
+      }
+
+      if ((rowCount > 1 && rowCount < 10) && (cell === 1 || cell === 10)) {
+        square.innerText = 10 - rowCount
+        square.style.width = '3vw'
         square.classList.add('numbers')
+        if (cell === 10) square.classList.add('numbers_rotate')
       }
 
-      if (rowCount === 9) {
-        square.classList.add('letters')
-      }
-
-      if ((rowCount === 1) || (rowCount === 8)) {
+      if ((rowCount === 2) || (rowCount === 9)) {
         switch (cell) {
           case 2:
           case 9:
@@ -50,19 +48,27 @@ function createBoard() {
         }
       }
 
-      if (((rowCount === 2) || (rowCount === 7)) && (cell > 1)) {
+      if (((rowCount === 3) || (rowCount === 8)) && (cell > 1 && cell < 10)) {
         square.innerText = 'P'
       }
 
-      if ((rowCount % 2 === 0) && (rowCount !== 9) && (cell > 1)) {
+      if ((rowCount % 2 === 0 && rowCount > 1 && rowCount < 10) && (cell > 1 && cell < 10)) {
         (cell % 2 === 0) ? square.classList.add('black') : square.classList.add('white')
-      } else if ((rowCount !== 9) && (cell > 1)){
+      } else if ((rowCount > 1 && rowCount < 10) && (cell > 1 && cell < 10)){
         (cell % 2 === 0) ? square.classList.add('white') : square.classList.add('black')
       }
 
-      if (rowCount === 9 && cell > 1) {
+      if (((rowCount === 1 || rowCount === 10) && cell === 1) ||
+          ((rowCount === 1 || rowCount === 10) && cell === 10)) {
+        square.style.height = '3vw'
+        square.style.width = '3vw'
+      }
+
+      if ((rowCount === 1 || rowCount === 10) && (cell > 1 && cell < 10)) {
         square.innerText = String.fromCharCode(95 + cell)
+        square.style.height = '3vw'
         square.classList.add('letters')
+        if (rowCount === 1) square.classList.add('letters_rotate')
         row.classList.add('row')
         row.appendChild(square)
       }
